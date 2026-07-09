@@ -52,6 +52,11 @@
   .dest h2 .en{display:block;font-family:"Fraunces",serif;font-weight:500;font-size:14px;letter-spacing:.14em;
     text-transform:uppercase;color:var(--aurora);margin-top:6px;}
   .dest .intro{color:var(--sub);font-size:14px;margin:14px 0 4px;}
+  .dphoto{position:relative;margin:16px 0 2px;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(12,37,48,.12);}
+  .dphoto img{display:block;width:100%;height:215px;object-fit:cover;}
+  .dphoto .credit{position:absolute;right:8px;bottom:7px;font-size:10.5px;color:rgba(255,255,255,.92);background:rgba(12,37,48,.5);padding:2px 9px;border-radius:999px;}
+  .spot-photo{float:right;width:118px;height:86px;object-fit:cover;border-radius:9px;margin:2px 0 8px 12px;}
+  @media(max-width:480px){.dphoto img{height:160px;}.spot-photo{float:none;width:100%;height:150px;margin:0 0 10px;}}
   .grouplabel{display:flex;align-items:center;gap:10px;margin:30px 0 4px;font-weight:700;font-size:15px;letter-spacing:.02em;}
   .grouplabel .tag{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
     font-weight:600;padding:3px 9px;border-radius:5px;}
@@ -139,6 +144,7 @@
     <span class="daychip">9/17（木）午後 · 宿泊</span>
     <h2>ベルゲン<span class="en">Bergen — フィヨルドの玄関口</span></h2>
   </div>
+  <div class="dphoto"><img src="img/bergen.jpg" alt="ブリッゲンの木造家屋群" loading="lazy"><span class="credit">Bryggen — joiseyshowaa / CC BY-SA 2.0</span></div>
   <p class="intro">港を中心に見どころが半径ワンコインに凝縮。ホテル（スカンディック バイパルケン）は魚市場・ブリッゲンから徒歩圏で、到着後の夕方だけでも十分回れます。年間200日以上雨と言われる街なので、雨具とスニーカーは必携。</p>
 
   <div class="grouplabel see"><span class="tag">観る</span>Sightseeing<span class="line"></span></div>
@@ -179,6 +185,18 @@
     <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://note.com/masamune_kwsk/n/nf9cf215a86aa" target="_blank" rel="noopener">マサムネの旅行記</a></div>
   </div>
 
+  <div class="spot eat">
+    <h3>トレクロー二エン<span class="sub">Trekroneren ／ 中心部・老舗ソーセージスタンド</span></h3>
+    <p>1946年から続く名物のホットドッグ／ソーセージ屋台。トナカイやエルク（ヘラジカ）のソーセージが名物で、リンゴンベリーやカリカリオニオンをのせて食べます。数百円台で北欧のジビエを気軽に味わえ、物価の高いベルゲンで頼れる軽食スポット。街歩きの合間の小腹埋めにぴったりです。</p>
+    <div class="note"><b>気軽さ◎：</b>立ち食い／テイクアウト中心で、レストランより断然安い。「まず一本、トナカイソーセージ」が旅行者の定番です。</div>
+  </div>
+
+  <div class="spot eat">
+    <h3>スキリングボーレ（シナモンロール）<span class="sub">Skillingsbolle ／ Baker Brun など街のベーカリー</span></h3>
+    <p>ベルゲン発祥とされる大きなシナモンロール。ブリッゲンの老舗ベーカリー <b>Baker Brun</b> をはじめ、街のパン屋やカフェの定番で、コーヒーと合わせるのが地元流。甘さは控えめで生地はしっとり、朝食やおやつに。雨宿りを兼ねてカフェで一息つくのにも向きます。</p>
+    <div class="voice eatv">コーヒー大国メモ：ノルウェーは一人あたりのコーヒー消費が世界トップクラス。街歩きに疲れたら、シナモンロール＋コーヒーの「フィーカ」的休憩を。</div>
+  </div>
+
   <div class="grouplabel tip"><span class="tag">メモ</span>Good to know<span class="line"></span></div>
   <ul class="tips">
     <li>雨が非常に多い街。<b>防水ジャケット＋滑りにくいスニーカー</b>があると街歩きが快適。少し登るとすぐ坂道です。</li>
@@ -194,6 +212,7 @@
     <span class="daychip">9/18（金）· フロム自由時間 約1時間50分（14:10着 → 16:00発）</span>
     <h2>フロム<span class="en">Flåm — ナットシェル途中の絶景の村</span></h2>
   </div>
+  <div class="dphoto"><img src="img/flam.jpg" alt="フロムの港と山" loading="lazy"><span class="credit">Flåm — Hesse1309 / CC BY-SA 3.0</span></div>
   <p class="intro">クルーズ到着後、フロム鉄道に乗るまでの自由時間。人口約500人の小さな村で、駅・港・店が至近に集まっています。<strong>正味1時間50分は昼食＋お土産で意外と短い</strong>ので、遠出はせず村中心で過ごすのが現実的です。</p>
 
   <div class="grouplabel see"><span class="tag">観る</span>Sightseeing<span class="line"></span></div>
@@ -206,7 +225,8 @@
 
   <div class="spot see">
     <h3>お土産 & ブラウンチーズ<span class="sub">駅併設のショップ ／ 品揃え充実</span></h3>
-    <p>駅に併設された広めの土産店があり、限られた時間でもまとめ買い可能。試食できる<b>ブラウンチーズ（ヤギ乳のキャラメルのような茶色いチーズ）</b>は「チーズの概念が変わる」と評判で、お土産の定番です。</p>
+    <img class="spot-photo" src="img/brunost.jpg" alt="ブラウンチーズ（ブルノスト）" loading="lazy">
+    <p>駅に併設された広めの土産店があり、限られた時間でもまとめ買い可能。試食できる<b>ブラウンチーズ（ヤギ乳のキャラメルのような茶色いチーズ）</b>は「チーズの概念が変わる」と評判で、お土産の定番です。専用のチーズスライサーと合わせて買うのも◎。</p>
     <div class="note">ステーガスタイン展望台はバス往復が必要で、1時間50分では厳しめ。今回は村中心に絞るのがおすすめ（展望台は宿泊者向け）。</div>
     <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://www.france-de-asobou.com/norway-flam/" target="_blank" rel="noopener">スイス＆フランスであそぼう</a><span class="sep">/</span><a href="https://oyagi-chan.com/norway-flam/" target="_blank" rel="noopener">旅トレイル</a></div>
   </div>
@@ -226,6 +246,12 @@
     <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/os_shisetsu/10415307" target="_blank" rel="noopener">フロム駅クチコミ（フォートラベル）</a><span class="sep">/</span><a href="https://note.com/masamune_kwsk/n/nf9cf215a86aa" target="_blank" rel="noopener">マサムネの旅行記（昼食探し）</a></div>
   </div>
 
+  <div class="spot eat">
+    <h3>フルクロア（温かい食事）<span class="sub">Furukroa Café ／ 駅・港のすぐそば</span></h3>
+    <p>フロムの港エリアにあるカフェテリア。スープやサンドイッチ、温かい軽食をセルフサービスで手早く取れるので、<b>正味1時間50分の限られた時間でもさっと昼食</b>を済ませたい人に便利。ベーカリーや土産コーナーも併設で、雨天時の待避所としても重宝します。</p>
+    <div class="note">短時間の現実解：着いたらまず食事の当たりをつけ、混む前に確保 → 残り時間で村の散策＆お土産、の順が回しやすいです。</div>
+  </div>
+
   <div class="grouplabel tip"><span class="tag">メモ</span>Good to know<span class="line"></span></div>
   <ul class="tips">
     <li>次のフロム鉄道（16:00発）は<b>自由席</b>。滝ショースフォッセンが見える<b>進行方向右側</b>の席が人気なので、早めにホームで並ぶのがおすすめ。</li>
@@ -241,6 +267,7 @@
     <span class="daychip">9/19（土）着 〜 9/21（月）· オーロラ2夜</span>
     <h2>トロムソ<span class="en">Tromsø — 北極圏のパリ、オーロラの街</span></h2>
   </div>
+  <div class="dphoto"><img src="img/tromso.jpg" alt="トロムソ橋と北極教会" loading="lazy"><span class="credit">Tromsø — Virtual-Pano / CC BY-SA 4.0</span></div>
   <p class="intro">「北のパリ」と呼ばれる北極圏最大の街。昼は街歩き＆展望、夜はオーロラという組み立てがしやすいのが魅力。ホテル（クオリティ サガ）はバス停が目の前で、ミニバスチェイスの集合にも便利です。中心部はコンパクトですが、目的地は見た目より遠いのでバス活用を。</p>
 
   <div class="grouplabel see"><span class="tag">観る</span>Sightseeing<span class="line"></span></div>
@@ -285,6 +312,17 @@
     <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11915442" target="_blank" rel="noopener">トナクさんの旅行記（KIWI）</a><span class="sep">/</span><a href="https://note.com/ziosan/n/n556b7063f95e" target="_blank" rel="noopener">ØZの旅行記</a></div>
   </div>
 
+  <div class="spot eat">
+    <h3>ラケッタ<span class="sub">Raketten Bar & Pølse ／ 中心部ストルトルゲット広場・世界最小級のバー</span></h3>
+    <p>1911年から広場に立つ、ノルウェーで最も小さいとも言われる屋台バー。名物は<b>トナカイソーセージのホットドッグ</b>で、寒い夜の街歩きの合間にぴったり。数百円台で温かいものが食べられ、オーロラ待ちの前の腹ごしらえにも便利な、地元の名物スタンドです。</p>
+    <div class="note"><b>寒い夜の味方：</b>座席はほぼなく立ち食いスタイル。冷えた体に温かいソーセージが染みます。</div>
+  </div>
+
+  <div class="spot eat">
+    <h3>カフェ休憩（シナモンロール）<span class="sub">Risø／Kaffebønna など中心部のカフェ</span></h3>
+    <p>北極圏の街だけにカフェ文化が根付き、こだわりの一杯を出す店が点在。<b>Risø Mat &amp; Kaffebar</b> や広場の <b>Kaffebønna</b> は、シナモンロールなどの菓子とコーヒーで暖まる定番。日照の短い季節、屋内でほっと一息つける場所を押さえておくと街歩きが快適になります。</p>
+  </div>
+
   <div class="grouplabel tip"><span class="tag">メモ</span>🌌 オーロラのコツ（9月中旬）<span class="line"></span></div>
   <ul class="tips">
     <li><b>9月でも見えます。</b>オーロラのシーズンは9月中旬〜4月上旬。「晴れて空が暗ければ9月でも見られた」という日本人旅行者の実体験ブログが複数あります。</li>
@@ -303,6 +341,7 @@
     <span class="daychip">9/18（金）夜着 · 9/21（月）午後 · 9/22（火）午前</span>
     <h2>オスロ<span class="en">Oslo — 水辺のアートと現代建築</span></h2>
   </div>
+  <div class="dphoto"><img src="img/oslo.jpg" alt="オスロ・オペラハウス" loading="lazy"><span class="credit">Oslo Opera House — Christian David / CC BY-SA 4.0</span></div>
   <p class="intro">主要スポットは徒歩＋トラムで回れるコンパクトな首都。実際に観光できるのは<strong>9/21の午後と9/22の午前</strong>（9/18は23時頃着で移動のみ）。ホテルはどちらも中央駅に至近（駅舎内・徒歩5分）なので、駅周辺〜港のオペラハウス方面を軸に。</p>
 
   <div class="grouplabel see"><span class="tag">観る</span>Sightseeing<span class="line"></span></div>
@@ -358,6 +397,17 @@
     <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://www.whhunternow.com/entry/oslotrip2022" target="_blank" rel="noopener">ワーホリハンターなう（カフェ）</a></div>
   </div>
 
+  <div class="spot eat">
+    <h3>フィスケリエット<span class="sub">Fiskeriet Youngstorget ／ Youngstorget 2b ／ 魚屋併設の食堂</span></h3>
+    <p>鮮魚店が営むカジュアルなシーフード食堂で、名物は<b>フィッシュ&チップス</b>やフィッシュスープ。高級店より気軽な価格帯で、しっかり魚を食べたいランチに便利。中心部の Youngstorget 広場に面し、観光の動線に組み込みやすい一軒です。</p>
+  </div>
+
+  <div class="spot eat">
+    <h3>シーヴェルキオスケン<span class="sub">Syverkiosken ／ Maridalsveien 45 ／ 昔ながらのホットドッグ売店</span></h3>
+    <p>オスロに残る数少ない伝統的なpølse（ホットドッグ）キオスク。<b>ロンパ（薄いポテトブレッド）で巻くローカルスタイル</b>や、カリカリオニオン・シュリンプサラダなどのトッピングが名物。物価の高いオスロで、数百円で小腹を満たせる庶民派の味です。</p>
+    <div class="note">グリューネルロッカ地区の散策途中に。ノルウェーの国民食「pølse」を気軽に試すならここ。</div>
+  </div>
+
   <div class="grouplabel tip"><span class="tag">メモ</span>Good to know<span class="line"></span></div>
   <ul class="tips">
     <li>観光の主戦場は<b>9/21午後と9/22午前</b>。9/22はチェックアウト（〜12:00）まで午前中に軽く回れます。中央駅↔空港は特急フリートグ or Vy普通で約20〜25分。</li>
@@ -396,7 +446,8 @@
 
 <footer>
   ノルウェー観光ガイド 2026 ／ 旅程サイトの companion guide<br>
-  滞在地：ベルゲン・フロム・トロムソ・オスロ ｜ 観光スポット × 食事スポット × オーロラのコツ
+  滞在地：ベルゲン・フロム・トロムソ・オスロ ｜ 観光スポット × 食事スポット × オーロラのコツ<br>
+  📷 写真：Wikimedia Commons（各写真に撮影者・ライセンスを表示）
 </footer>
 
 </div>
