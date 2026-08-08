@@ -61,7 +61,12 @@
   .dphoto img{display:block;width:100%;height:215px;object-fit:cover;}
   .dphoto .credit{position:absolute;right:8px;bottom:7px;font-size:10.5px;color:rgba(255,255,255,.92);background:rgba(12,37,48,.5);padding:2px 9px;border-radius:999px;}
   .spot-photo{float:right;width:118px;height:86px;object-fit:cover;border-radius:9px;margin:2px 0 8px 12px;}
-  @media(max-width:480px){.dphoto img{height:160px;}.spot-photo{float:none;width:100%;height:150px;margin:0 0 10px;}}
+  .spot-media{clear:both;position:relative;margin:2px 0 12px;border-radius:11px;overflow:hidden;background:#dfe9e7;box-shadow:0 3px 12px rgba(12,37,48,.1);}
+  .spot-media img{display:block;width:100%;height:185px;object-fit:cover;transition:transform .25s ease;}
+  .spot-media:hover img{transform:scale(1.02);}
+  .spot-media figcaption{position:absolute;right:6px;bottom:6px;max-width:calc(100% - 12px);padding:2px 7px;border-radius:999px;background:rgba(12,37,48,.72);color:#fff;font-size:9px;line-height:1.35;text-align:right;}
+  .spot-media figcaption a{color:#fff;text-decoration:none;}
+  @media(max-width:480px){.dphoto img{height:160px;}.spot-photo{float:none;width:100%;height:150px;margin:0 0 10px;}.spot-media img{height:158px;}}
   .grouplabel{display:flex;align-items:center;gap:10px;margin:30px 0 4px;font-weight:700;font-size:15px;letter-spacing:.02em;}
   .grouplabel .tag{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
     font-weight:600;padding:3px 9px;border-radius:5px;}
@@ -649,6 +654,81 @@
 <div style="text-align:center;margin-top:36px;">
   <a class="herolink" style="background:var(--deep);color:#fff;box-shadow:0 6px 18px rgba(12,37,48,.2);" href="https://nobukusama.github.io/norway-trip-guide/"><span style="color:#8fd8ba;">🗓️</span> 旅程サイト（フライト・宿泊）へ <span style="color:#8fd8ba;">→</span></a>
 </div>
+
+<script>
+(() => {
+  const commons = 'https://commons.wikimedia.org/wiki/';
+  const photos = {
+    bryggen: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Fassaden_in_Bryggen%2C_Bergen_N.jpg/960px-Fassaden_in_Bryggen%2C_Bergen_N.jpg', alt:'ベルゲンのブリッゲン木造家屋群', credit:'JoachimKohler-HB / CC BY-SA 4.0', href:commons+'File:Fassaden_in_Bryggen,_Bergen_N.jpg'},
+    floyen: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Vista_de_Bergen_desde_la_monta%C3%B1a_Fl%C3%B8yen%2C_Noruega%2C_2019-09-08%2C_DD_27-31_PAN.jpg/960px-Vista_de_Bergen_desde_la_monta%C3%B1a_Fl%C3%B8yen%2C_Noruega%2C_2019-09-08%2C_DD_27-31_PAN.jpg', alt:'フロイエン山から望むベルゲン', credit:'Diego Delso / CC BY-SA 4.0', href:commons+'File:Vista_de_Bergen_desde_la_montaña_Fløyen,_Noruega,_2019-09-08,_DD_27-31_PAN.jpg'},
+    tower: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/View_of_ancient_Rosenkrantz_Tower_in_Bergen_Norway_20070325.JPG/960px-View_of_ancient_Rosenkrantz_Tower_in_Bergen_Norway_20070325.JPG', alt:'ベルゲンのローセンクランツの塔', credit:"Jan's fotoside / CC BY-SA 3.0", href:commons+'File:View_of_ancient_Rosenkrantz_Tower_in_Bergen_Norway_20070325.JPG'},
+    fishmarket: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Fish_market%2C_Bergen%2C_Norway_LOC_3174174175.jpg/960px-Fish_market%2C_Bergen%2C_Norway_LOC_3174174175.jpg', alt:'ベルゲンの魚市場', credit:'Library of Congress / No restrictions', href:commons+'File:Fish_market,_Bergen,_Norway_LOC_3174174175.jpg'},
+    seafood: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Fiskebryggen%2C_Mathallen%2C_Fishmarket%2C_Bergen%2C_Norway_2018-03-18._Buccinum_undatum_%28kongesnegl%2C_kongsnegl%29%2C_etc._displayed_for_sale_at_Fjellsk%C3%A5l_sea_food_store.jpg/960px-thumbnail.jpg', alt:'ノルウェーの魚市場に並ぶシーフード', credit:'Wolfmann / CC BY-SA 4.0', href:commons+'File:Fiskebryggen,_Mathallen,_Fishmarket,_Bergen,_Norway_2018-03-18._Buccinum_undatum_(kongesnegl,_kongsnegl),_etc._displayed_for_sale_at_Fjellskål_sea_food_store.jpg'},
+    cinnamon: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Rollo_de_canela_%28Cinnamon_roll%29.jpg/960px-Rollo_de_canela_%28Cinnamon_roll%29.jpg', alt:'シナモンロールとコーヒー', credit:'Horacio Cambeiro / CC BY-SA 3.0', href:commons+'File:Rollo_de_canela_(Cinnamon_roll).jpg'},
+    flamMuseum: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Trolls_on_display_at_Flam_railway_museum.jpg/960px-Trolls_on_display_at_Flam_railway_museum.jpg', alt:'フロム鉄道博物館の展示', credit:'Netha Hussain / CC BY-SA 4.0', href:commons+'File:Trolls_on_display_at_Flam_railway_museum.jpg'},
+    brunost: {src:'img/spots/brunost-card.jpg', alt:'ノルウェーのブラウンチーズ', credit:'color line / CC BY 2.0', href:commons+'File:Brunost_-_Brown_cheese.jpg'},
+    flam: {src:'img/flam.jpg', alt:'フィヨルドに囲まれたフロムの港', credit:'Hesse1309 / CC BY-SA 3.0', href:commons+'Category:Flåm'},
+    cathedral: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/NOR-2016-Troms%C3%B8-Arctic_Cathedral_%28Ishavskatedralen%29_01_front.jpg/960px-NOR-2016-Troms%C3%B8-Arctic_Cathedral_%28Ishavskatedralen%29_01_front.jpg', alt:'トロムソの北極教会', credit:'Godot13 / CC BY-SA 4.0', href:commons+'File:NOR-2016-Tromsø-Arctic_Cathedral_(Ishavskatedralen)_01_front.jpg'},
+    fjellheisen: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Troms%C3%B8_vom_Fjellheisen_aus_gesehen.jpg/960px-Troms%C3%B8_vom_Fjellheisen_aus_gesehen.jpg', alt:'フィエルハイセンから望むトロムソ', credit:'JoachimKohlerBremen / CC BY-SA 4.0', href:commons+'File:Tromsø_vom_Fjellheisen_aus_gesehen.jpg'},
+    polaria: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Polaria_01.JPG/960px-Polaria_01.JPG', alt:'トロムソのポラリア外観', credit:'Bjoertvedt / CC BY-SA 3.0', href:commons+'File:Polaria_01.JPG'},
+    polarMuseum: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Polar_Museum_in_Troms%C3%B8_%28Jul_2019%29_1.jpg/960px-Polar_Museum_in_Troms%C3%B8_%28Jul_2019%29_1.jpg', alt:'トロムソの北極圏博物館', credit:'Visem / CC BY-SA 4.0', href:commons+'File:Polar_Museum_in_Tromsø_(Jul_2019)_1.jpg'},
+    nnkm: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Nordnorsk_Kunstmuseum_Troms%C3%B8.jpg/960px-Nordnorsk_Kunstmuseum_Troms%C3%B8.jpg', alt:'北ノルウェー美術館の外観', credit:'Evgenii Salganik / CC BY-SA 4.0', href:commons+'File:Nordnorsk_Kunstmuseum_Tromsø.jpg'},
+    tromsoMuseum: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Troms%C3%B8_Museum11.jpg/960px-Troms%C3%B8_Museum11.jpg', alt:'ノルウェー北極大学博物館の外観', credit:'Manxruler / CC BY-SA 3.0', href:commons+'File:Tromsø_Museum11.jpg'},
+    science: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Nordnorsk_vitensenter_Hansine_Hansens_veg_Universitetet_i_Troms%C3%B8_UiT_2017-09-14_cropped_distorted_panorama.jpg/960px-Nordnorsk_vitensenter_Hansine_Hansens_veg_Universitetet_i_Troms%C3%B8_UiT_2017-09-14_cropped_distorted_panorama.jpg', alt:'北ノルウェー・サイエンスセンター', credit:'Wolfmann / CC BY-SA 4.0', href:commons+'File:Nordnorsk_vitensenter_Hansine_Hansens_veg_Universitetet_i_Tromsø_UiT_2017-09-14_cropped_distorted_panorama.jpg'},
+    mack: {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Mack_Brewery%2CTroms%C3%B8.jpg/960px-Mack_Brewery%2CTroms%C3%B8.jpg', alt:'トロムソのマック醸造所', credit:'Manxruler / CC BY-SA 3.0', href:commons+'File:Mack_Brewery,Tromsø.jpg'},
+    tromso: {src:'img/tromso.jpg', alt:'トロムソの街並みと北極教会', credit:'Virtual-Pano / CC BY-SA 4.0', href:commons+'Category:Tromsø'},
+    aurora: {src:'img/aurora.jpg', alt:'トロムソの夜空に広がるオーロラ', credit:'Andi Gentsch / CC BY-SA 2.0', href:commons+'Category:Aurorae_in_Tromsø'},
+    oslo: {src:'img/oslo.jpg', alt:'オスロの港とオペラハウス', credit:'Christian David / CC BY-SA 4.0', href:commons+'Category:Oslo_Opera_House'},
+    vigeland: {src:'img/vigeland.jpg', alt:'ヴィーゲラン公園の彫刻', credit:'Christian David / Wikimedia Commons', href:commons+'Category:Frogner_Park'},
+    bergen: {src:'img/bergen.jpg', alt:'ベルゲンの港とブリッゲン', credit:'joiseyshowaa / CC BY-SA 2.0', href:commons+'Category:Bryggen'}
+  };
+
+  const assignments = new Map([
+    ['ブリッゲン','bryggen'], ['フロイエン山','floyen'], ['ローセンクランツの塔 & ホーコン王の館','tower'],
+    ['魚市場（フィスケトルゲット）','fishmarket'], ['ブリッゲロフテ & ストゥーネ','seafood'], ['トレクロー二エン','bergen'], ['スキリングボーレ（シナモンロール）','cinnamon'],
+    ['村の散策 & フロム鉄道博物館','flamMuseum'], ['お土産 & ブラウンチーズ','brunost'], ['エーギル ブリュッゲリ パブ','flam'], ['駅前のベーカリー / Coop','brunost'], ['フルクロア（温かい食事）','flam'],
+    ['北極教会','cathedral'], ['フィエルハイセン（ストールシュタイネン山）','fjellheisen'], ['ポラリア & 街歩き','polaria'], ['北極圏博物館','polarMuseum'],
+    ['北ノルウェー美術館','nnkm'], ['ノルウェー北極大学博物館','tromsoMuseum'], ['北ノルウェー・サイエンスセンター','science'], ['観光列車 Ishavstoget','tromso'],
+    ['Bardus Bistro','aurora'], ['Skarven（Biffhuset Skarven）','seafood'], ['Ølhallen（Mack ビール）','mack'], ['Fiskekompaniet','seafood'],
+    ["Emma's Drømmekjøkken & Vinbar",'seafood'], ["Tang's Restaurant",'tromso'], ['ラケッタ','tromso'], ['カフェ休憩（シナモンロール）','cinnamon'],
+    ['オスロ・オペラハウス','oslo'], ['ムンク美術館','oslo'], ['カールヨハン通り','oslo'], ['ヴィーゲラン公園（フログネル公園）','vigeland'], ['アーケルブリッゲ & アーケシュフース城','oslo'],
+    ['The Salmon','seafood'], ['Louise Restaurant & Bar','seafood'], ['Oslo Street Food / Mathallen','fishmarket'], ['フィスケリエット','seafood'], ['シーヴェルキオスケン','oslo'],
+    ['キーウィ','fishmarket'], ['レマ1000','fishmarket'], ['コープ','fishmarket'], ['メニー','seafood']
+  ]);
+
+  document.querySelectorAll('.spot').forEach(card => {
+    const heading = card.querySelector('h3');
+    const title = heading?.childNodes[0]?.textContent.trim();
+    const photo = photos[assignments.get(title)];
+    if (!heading || !photo) return;
+
+    const figure = document.createElement('figure');
+    figure.className = 'spot-media';
+    const link = document.createElement('a');
+    link.href = photo.href;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    const image = document.createElement('img');
+    image.src = photo.src;
+    image.alt = photo.alt;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    link.append(image);
+    const caption = document.createElement('figcaption');
+    const creditLink = document.createElement('a');
+    creditLink.href = photo.href;
+    creditLink.target = '_blank';
+    creditLink.rel = 'noopener';
+    creditLink.textContent = 'Photo: ' + photo.credit;
+    caption.append(creditLink);
+    figure.append(link, caption);
+
+    const actionLinks = card.querySelectorAll('.maplink, .sitelink');
+    const lastAction = actionLinks[actionLinks.length - 1];
+    (lastAction || heading).insertAdjacentElement('afterend', figure);
+  });
+})();
+</script>
 
 <footer>
   ノルウェー観光ガイド 2026 ／ 旅程サイトの companion guide<br>
