@@ -130,6 +130,10 @@
   .look-list li:before{content:"✓";position:absolute;left:12px;top:9px;color:var(--aurora);font-weight:700;}
   .menu-fig{clear:both;margin:12px 0 6px;border-radius:11px;overflow:hidden;background:var(--paper);border:1px solid var(--line);}
   .menu-fig img{display:block;width:100%;height:auto;}
+  /* 横長メニューは枠内で横スクロールさせて文字を読めるように */
+  .menu-fig.wide{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .menu-fig.wide img{width:auto;min-width:1000px;height:auto;}
+  .menu-fig.wide figcaption{position:sticky;left:0;}
   .menu-fig figcaption{padding:6px 9px;font-size:10.5px;color:var(--slate);text-align:right;}
   .menu-list{margin:0;padding:4px 0 10px;display:grid;gap:6px;}
   .menu-list li{list-style:none;font-size:12.5px;line-height:1.7;color:var(--slate);padding:7px 10px;background:var(--paper);border-radius:8px;}
@@ -337,8 +341,38 @@
     <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Bryggeloftet%20%26%20Stuene%2C%20Bryggen%2011%2C%20Bergen" target="_blank" rel="noopener">📍 Googleマップで見る</a>
     <a class="sitelink" href="https://www.bryggeloftet.no/" target="_blank" rel="noopener">🔗 公式サイト</a>
     <p>ブリッゲンにある、同じ家族が1910年から営むベルゲン最古のレストラン。名物のベルゲン風フィッシュスープをはじめ、魚介やトナカイなどノルウェーの伝統料理を味わえます。口コミでは、干し鱈を使ったバカラオと地元のハンザビールが紹介されています。</p>
-    <div class="note"><b>予約がおすすめ：</b>港を望める人気店です。希望時間がある場合は、公式サイトで事前に予約してください。</div>
-    <div class="spot-src"><span class="lbl">📒 口コミ：</span><a href="https://studio-unicorn.hatenablog.com/entry/20090712/p2" target="_blank" rel="noopener">Unicorn Diary（Bacalaoに舌鼓）</a></div>
+    <div class="note"><b>予約がおすすめ：</b>港を望める人気店です。希望時間がある場合は、公式サイトで事前に予約してください。営業は毎日12:00〜23:00、<b>ランチメニューは12:00〜16:00</b>。</div>
+
+    <figure class="menu-fig wide">
+      <img src="img/spots/bryggeloftet-lunch-menu.png" alt="Bryggeloftet & Stueneのランチメニュー。バカラオ385NOK、フィッシュスープ299NOKなど" loading="lazy">
+      <figcaption>ランチメニュー（ご提供写真）— 横長のため左右にスクロールできます</figcaption>
+    </figure>
+
+    <details class="qa">
+      <summary>ランチメニューの日本語訳（全10品・価格つき）</summary>
+      <ul class="menu-list">
+        <li><b>Bacalao</b><span class="price">385</span><br>干ダラ、じゃがいも、玉ねぎ、オリーブ、にんにく、唐辛子のトマト煮込み。<b>ベルゲンを代表する一皿</b>。</li>
+        <li><b>Husets store fiskesuppe</b><span class="price">299</span><br>店自慢の大きなフィッシュスープ。エビ・ムール貝・白身魚・野菜入りで、サワードウパン付き。</li>
+        <li><b>Reker i trengsel</b><span class="price">299</span><br>エビたっぷりのオープンサンド。サワードウパンにマヨネーズとレモン。</li>
+        <li><b>Moules frites</b><span class="price">325</span><br>トロンデラーグ地方のムール貝0.5kgを、クリーミーな白ワインソースで蒸した料理。フライドポテト付き。</li>
+        <li><b>Gratinert sjøkreps</b><span class="price">465</span><br>手長エビ（ノルウェー・ロブスター）のグラタン。にんにく・レモン・パセリ風味。</li>
+        <li><b>Bryggeloftets cæsarsalat</b><span class="price">325</span><br>鶏肉、ベーコン、パルメザン、クルトン、シーザードレッシング、赤玉ねぎのピクルス入り。</li>
+        <li><b>Karbonadesmørbrød</b><span class="price">285</span><br>牛肉パティのオープンサンド。サラダ、ピクルス、トマト、炒め玉ねぎ添え。</li>
+        <li><b>Husets clubsandwich med pommes frites</b><span class="price">315</span><br>鶏胸肉、ベーコン、サラダ、トマト、アイオリをサワードウパンで挟んだクラブサンド。フライドポテト付き。</li>
+        <li><b>Bryggeloftets hamburger</b><span class="price">299</span><br>ノルウェー産牛肉のハンバーガー。チーズ、サラダ、トマト、玉ねぎ、ピクルス、ソース、フライドポテト付き。</li>
+        <li><b>Vegetar burger</b><span class="price">299</span><br>Beyond Burgerを使ったベジタリアンバーガー。サラダとフライドポテト付き。</li>
+      </ul>
+    </details>
+
+    <details class="qa">
+      <summary>🐟 バカラオ（Bacalao）とは — 干ダラが地中海から帰ってきた料理</summary>
+      <p><b>bacalao</b> はポルトガル語・スペイン語で「タラ」の意味です。ノルウェーは何世紀にもわたり干しダラをポルトガル・スペイン・イタリアへ輸出し、イベリア半島でトマトと煮込む料理に発展。それが<b>ノルウェーへ逆輸入</b>されて国民食のひとつになりました。「ノルウェーの魚が、地中海で料理になって帰ってきた」一皿です。</p>
+      <p>使うのは塩漬けにして乾燥させた<b>クリップフィスク（klippfisk）</b>。塩を使わず風乾させる<b>トルフィスク（tørrfisk）</b>とは別物で、ベルゲンがハンザ同盟時代に輸出して栄えたのは後者です。身が締まっており、生のタラとは食感が異なります。</p>
+      <p>ブリッゲンの木造家屋群は、この干ダラ貿易で建てられたものです。<b>その建物の中（Bryggen 11・1910年創業）で干ダラの料理を食べる</b>のが、この店でバカラオを頼む醍醐味といえます。</p>
+    </details>
+
+    <div class="note"><b>4人でシェアするなら：</b>ベルゲン風フィッシュスープ299×1、エビのオープンサンド299×1、バカラオ385×2＝<b>1,368NOK（1人342NOK）</b>（飲み物・デザート別）。</div>
+    <div class="spot-src"><span class="lbl">📒 口コミ：</span><a href="https://studio-unicorn.hatenablog.com/entry/20090712/p2" target="_blank" rel="noopener">Unicorn Diary（Bacalaoに舌鼓）</a><span class="sep">/</span><a href="https://www.bryggeloftet.no/menu" target="_blank" rel="noopener">公式メニュー</a></div>
   </div>
 
   <div class="spot eat">
