@@ -128,6 +128,14 @@
   .look-list{margin:0;padding:4px 0 0;display:grid;gap:8px;}
   .look-list li{list-style:none;background:var(--paper);border-radius:9px;padding:9px 11px 9px 34px;font-size:13px;line-height:1.65;position:relative;}
   .look-list li:before{content:"✓";position:absolute;left:12px;top:9px;color:var(--aurora);font-weight:700;}
+  .menu-fig{clear:both;margin:12px 0 6px;border-radius:11px;overflow:hidden;background:var(--paper);border:1px solid var(--line);}
+  .menu-fig img{display:block;width:100%;height:auto;}
+  .menu-fig figcaption{padding:6px 9px;font-size:10.5px;color:var(--slate);text-align:right;}
+  .menu-list{margin:0;padding:4px 0 10px;display:grid;gap:6px;}
+  .menu-list li{list-style:none;font-size:12.5px;line-height:1.7;color:var(--slate);padding:7px 10px;background:var(--paper);border-radius:8px;}
+  .menu-list li.head{background:none;padding:9px 0 2px;font-weight:700;color:var(--deep);font-size:12px;letter-spacing:.04em;}
+  .menu-list li b{color:var(--deep);}
+  .menu-list li .price{float:right;margin-left:10px;font-weight:700;color:#8a5316;}
   .food-feature{margin-top:34px;scroll-margin-top:64px;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--amber);border-radius:16px;padding:20px;box-shadow:0 6px 20px rgba(12,37,48,.08);}
   .food-feature .kicker{margin:0 0 5px;color:#8a5316;font-family:"Fraunces",serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;}
   .food-feature h2{margin:0;font-family:"Noto Serif JP",serif;font-size:clamp(22px,5.5vw,28px);line-height:1.4;color:var(--deep);}
@@ -466,8 +474,46 @@
     <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Drag%C3%B8y%20Kystens%20Mathus%2C%20Troms%C3%B8" target="_blank" rel="noopener">📍 Googleマップで見る</a>
     <a class="sitelink" href="https://kystensmathus.no/dragoy/" target="_blank" rel="noopener">🔗 公式サイト</a>
     <p>新鮮な魚介を扱う魚屋に併設された、気軽なシーフード軽食店。フィッシュ＆チップス、フィッシュスープ、魚のケーキ、エビなどを、トロムソ海峡を眺めながら味わえます。レストランより手頃に魚料理を楽しみたいランチに向いています。</p>
-    <div class="note"><b>利用方法：</b>予約は受け付けていないため、営業時間内に直接来店します。魚売り場で季節の鮮魚や持ち帰り商品も購入できます。</div>
-    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://tromso.exblog.jp/25611126/" target="_blank" rel="noopener">ノルウェー北極圏の街へ（Dragøy訪問記）</a></div>
+    <div class="note"><b>利用方法：</b>予約は受け付けていないため、営業時間内に直接来店します。<b>先に席を確保してから、ショーケースのあるカウンターで注文・会計する</b>方式で、席に座って待っていても注文を取りに来ません。魚売り場で季節の鮮魚や持ち帰り商品も購入できます。</div>
+    <div class="note"><b>営業：</b>月〜金 10:00〜17:00 ／ 土 11:00〜17:00 ／ <b>日曜休</b>。昼のみでディナー営業はありません。</div>
+
+    <figure class="menu-fig">
+      <img src="img/spots/dragoy-menu.png" alt="Dragøyのメニュー。北極エビ279NOK、サーモン刺身299NOK、フィッシュ&チップス259NOKなど" loading="lazy">
+      <figcaption>店内のメニュー（ご提供写真）</figcaption>
+    </figure>
+
+    <details class="qa">
+      <summary>メニューの日本語訳（全21品・価格つき）</summary>
+      <ul class="menu-list">
+        <li class="head">FORRETTER ／ 前菜</li>
+        <li><b>Kråkeboller</b><span class="price">189</span><br>ウニ。リングヴァスオイ島で獲れた天然もの。醤油をほんのり効かせて、そのままの味で。</li>
+        <li><b>Østers on the rocks</b><span class="price">109</span><br>生牡蠣。自家製カクテルソースとピカディージョソース添え。</li>
+        <li><b>Grillede kamskjell</b><span class="price">219</span><br>ホタテのグリル3個。パルメザンをのせて焼き、白ワインソースで。</li>
+
+        <li class="head">VARME HOVEDRETTER ／ 温かいメイン</li>
+        <li><b>Skalldyrsuppe "a la Cioppino"</b><span class="price">399</span><br>トマトベースの魚介スープ。ムール貝、ホタテ、イカ入り。パン付き。</li>
+        <li><b>Norsk Kremet-Safran Fiskesuppe</b><span class="price">249</span><br>サフラン風味のクリーム系フィッシュスープ。パンとバター付き。</li>
+        <li><b>Kongekrabbe</b><span class="price">1259</span><br>タラバガニ400g。サラダ、ドレッシング、パン付き。※価格が突出して高く、レビューの評価も割れています。</li>
+        <li><b>Snøkrabbe</b><span class="price">749</span><br>ズワイガニ350g。サラダ、パン、スパイシーマンゴーマヨネーズ添え。</li>
+        <li><b>Norsk Hummer</b><span class="price">999</span><br>ノルウェー産オマールエビ。南部で漁獲され、トロムソで育てられたもの。パンとバター付き。</li>
+        <li><b>Sjøkreps "al ajillo"</b><span class="price">399</span><br>アカザエビ（手長エビ）のアヒージョ。にんにくとパセリのオイルで焼き、サラダ・パン・アイオリを添えて。</li>
+        <li><b>Fish and Chips</b><span class="price">259</span><br>その日の水揚げの魚のフライ。フライドポテトと自家製ハニーディジョン・タルタルソース。</li>
+
+        <li class="head">KALDE HOVEDRETTER ／ 冷たいメイン</li>
+        <li><b>Salmon Sashimi</b><span class="price">299</span><br>サーモンの刺身。最高に新鮮なサーモンに、ピクルスと海藻を添えて。</li>
+        <li><b>Husets Røkte fisk</b><span class="price">299</span><br>自家製スモークフィッシュの盛り合わせ。クジラ、サーモン、ブルーベリーでグラヴラクスにしたオヒョウ、サバ、ニシンの燻製、数種の魚卵。パン、アイオリ、サラダ付き。</li>
+        <li><b>Ferske Reker</b><span class="price">279</span><br>北極エビ300g。アイオリ、パン、バター添え。自分で殻を剥いて食べる北欧スタイル。</li>
+
+        <li class="head">DRIKKE ／ 飲み物</li>
+        <li><b>ワイン（グラス／ボトル）</b><br>Laroche Chardonnay 190/725、Prosecco Canevel 615、Riesling Von Winning 190/695、ハウスワイン Mas Janeil Blanc 170/619</li>
+        <li><b>地ビール</b><span class="price">115/120</span><br>Mack Pilsner、Mack Håkon、Isbjørn／シードル。Mackは世界最北のビール会社です。</li>
+        <li><b>輸入ビール</b><span class="price">155/130</span><br>Erdinger、Crabbies</li>
+        <li><b>ソフトドリンク</b><br>コーラ・ファンタ・スプライト 57／オーガニックりんごジュース 62／紅茶・コーヒー・白湯 44・41・35</li>
+      </ul>
+    </details>
+
+    <div class="note"><b>4人でシェアするなら：</b>チョッピーノ風スープ399＋サーモン刺身299＋北極エビ279＋フィッシュ&amp;チップス259＝<b>1,236NOK（1人309NOK）</b>。スープをクリーム系249に替えたり、2種類頼んで飲み比べるのもおすすめです。</div>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://tromso.exblog.jp/25611126/" target="_blank" rel="noopener">ノルウェー北極圏の街へ（Dragøy訪問記）</a><span class="sep">/</span><a href="https://restaurantguru.com/Kystens-Mathus-Tromso" target="_blank" rel="noopener">Restaurant Guru</a></div>
   </div>
 
   <div class="spot eat">
